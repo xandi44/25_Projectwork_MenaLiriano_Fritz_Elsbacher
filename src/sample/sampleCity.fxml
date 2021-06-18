@@ -36,7 +36,7 @@
          <children>
             <VBox prefHeight="268.0" prefWidth="600.0">
                <children>
-                  <Slider onDragDetected="#slPic">
+                  <Slider <!--onDragDetected="#slPic"-->>
                      <VBox.margin>
                         <Insets left="90.0" right="90.0" />
                      </VBox.margin>
