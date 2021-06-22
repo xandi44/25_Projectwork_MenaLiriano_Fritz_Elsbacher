@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerCity">
+   <top>
+      <Label fx:id="lbCityName" text="City" textFill="#bc1264" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Moonbeam Regular" size="38.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="247.0" minHeight="10.0" prefHeight="247.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="168.0" minHeight="10.0" prefHeight="102.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="268.0" prefWidth="600.0">
+               <children>
+                  <Slider onDragDetected="#slPic">
+                     <VBox.margin>
+                        <Insets left="90.0" right="90.0" />
+                     </VBox.margin>
+                  </Slider>
+                  <ImageView fx:id="iwPic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="90.0" right="90.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+            <HBox prefHeight="64.0" prefWidth="600.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="population:" textFill="#c60e7f">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Moonbeam Regular" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbPopulation" text="populationwert">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Moonbeam Regular" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="size:" textFill="#b21578">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Moonbeam Regular" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbSize" text="sizewert">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Moonbeam Regular" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="sealevel:" textFill="#b231a1">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Moonbeam Regular" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbSealevel" text="sealevelwert">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Moonbeam Regular" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbCountryName" text="Country" textFill="#bc1880">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Moonbeam Regular" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>
