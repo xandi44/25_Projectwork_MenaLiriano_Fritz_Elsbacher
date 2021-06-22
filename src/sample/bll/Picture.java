@@ -1,6 +1,10 @@
 package sample.bll;
 
+import sample.dal.dao.Dao;
+
 import java.awt.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Picture {
     int id;
@@ -35,5 +39,9 @@ public class Picture {
 
     public void setImage(Image image) {
         this.image = image;
+    }
+
+    public static Set<Picture> getPersons(Dao<Picture> dao){
+        return new HashSet<>(dao.getAll());
     }
 }

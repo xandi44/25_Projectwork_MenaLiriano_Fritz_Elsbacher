@@ -1,5 +1,10 @@
 package sample.bll;
 
+import sample.dal.DatabaseManager;
+
+import java.util.HashMap;
+import java.util.HashSet;
+
 public class Country {
     int id;
     String name;
@@ -28,5 +33,9 @@ public class Country {
     @Override
     public String toString() {
         return name;
+    }
+
+    public static HashSet<Country> getCountries(){
+        return new HashSet<>(DatabaseManager.getInstance().getCountries().values());
     }
 }
