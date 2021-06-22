@@ -24,6 +24,6 @@
       </Button>
    </bottom>
    <center>
-      <WebView fx:id="idWebview" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <!--<WebView fx:id="idWebview" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />-->
    </center>
 </BorderPane>

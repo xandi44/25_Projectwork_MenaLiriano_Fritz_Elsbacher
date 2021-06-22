@@ -89,7 +89,7 @@ public class DatabaseManager {
             resultSet = stmt.executeQuery(query);
             // resultset wird durchiteriert
             while(resultSet.next()){
-                cities.put(resultSet.getInt(1),new City(resultSet.getInt(1),resultSet.getString(2),getCountries().get(resultSet.getInt(1)),resultSet.getInt(3),resultSet.getInt(4),resultSet.getInt(5),resultSet.getString(6)));
+                cities.put(resultSet.getInt(1),new City(resultSet.getInt(1),resultSet.getString(2),getCountries().get(resultSet.getInt(3)),resultSet.getInt(3),resultSet.getInt(4),resultSet.getInt(5),resultSet.getString(6)));
             }
         }catch(SQLException throwables){
             throwables.printStackTrace();

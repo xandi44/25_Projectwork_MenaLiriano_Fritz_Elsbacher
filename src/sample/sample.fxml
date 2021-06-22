@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -10,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <top>
       <Label fx:id="lbcountries" text="Countries" textFill="#d726aa" BorderPane.alignment="CENTER">
          <font>
@@ -38,7 +40,15 @@
                         <Font name="Moonbeam Regular" size="29.0" />
                      </font>
                   </Label>
-                  <ListView fx:id="lvCity" prefHeight="339.0" prefWidth="300.0" />
+                  <ListView fx:id="lvCity" prefHeight="339.0" prefWidth="300.0">
+                     <contextMenu>
+                        <ContextMenu>
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#OnClickWebside" text="Webseite" />
+                              <MenuItem mnemonicParsing="false" onAction="#OnClickPictures" text="Bilder" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu></ListView>
                </children>
             </VBox>
             <ListView fx:id="lvCountry" prefHeight="200.0" prefWidth="200.0" />
