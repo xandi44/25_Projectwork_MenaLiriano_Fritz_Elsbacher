@@ -89,7 +89,7 @@ public class Controller implements Initializable {
                 Scene scene = null;
                 root = loader.load();
                 controller = loader.getController();
-                controller.setCity(currentCity);
+                controller.setCity(currentCity.getWebseite());
                 stage = new Stage();
                 scene = new Scene(root);
                 stage.setTitle("Projectwork");
