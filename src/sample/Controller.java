@@ -96,7 +96,7 @@ public class Controller implements Initializable {
                 scene = new Scene(root);
                 stage.setTitle("Projectwork");
                 stage.setScene(scene);
-                stage.initModality(Modality.APLICATION_MODAL);
+                stage.initModality(Modality.APPLICATION_MODAL);
                 stage.showAndWait();
             } catch (IOException e) {
                 e.printStackTrace();
