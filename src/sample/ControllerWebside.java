@@ -44,8 +44,12 @@ public class ControllerWebside {
         System.out.println(weburl);  // zum testen des wertes es wird jz grad noch de sehhoehe ausgeben also
         // bei Mallorca zb 13
         //webEngine.load(weburl);  // des is dann des richtige das dann alles geht, wenn a string drin is
-
         webEngine.load("http://www.google.at");  // zum testen dann weglöschen
+
+
+
+
+
     }
     // Funktionalität für den ZureckButton:
     public void onclickWVback(ActionEvent actionEvent)  {
@@ -53,7 +57,4 @@ public class ControllerWebside {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
-
-
-
 }
