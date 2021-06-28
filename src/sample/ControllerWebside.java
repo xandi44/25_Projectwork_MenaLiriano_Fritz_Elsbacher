@@ -34,7 +34,7 @@ public class ControllerWebside {
     public void setCity(String currenturl) {
         String weburl = currenturl;
 
-        // replace weil url nur bei http geht also https wird durch https getauscht
+        // replace weil url nur bei http geht also https wird durch http getauscht
         // (aber besser wär wahrscheinlich glei datenbank ändern)
 
         // weburl = weburl.replace("https","http");
