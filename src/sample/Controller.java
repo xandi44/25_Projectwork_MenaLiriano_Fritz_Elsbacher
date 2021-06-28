@@ -89,7 +89,9 @@ public class Controller implements Initializable {
                 Scene scene = null;
                 root = loader.load();
                 controller = loader.getController();
-                controller.setCity(currentCity.getWebseite());
+                controller.setCity("https://www.google.com"); // es geht hardcodiert,
+                // aber es geht noch ned mit der nächsten zeile, da irgend a fehler is statt an string steht de sehehhoehe drin
+                //controller.setCity(currentCity.getWebseite());
                 stage = new Stage();
                 scene = new Scene(root);
                 stage.setTitle("Projectwork");

@@ -33,23 +33,14 @@ public class ControllerWebside {
   // Funktionaltiät für den Webviewer:
     public void setCity(String currenturl) {
         String weburl = currenturl;
-
-
         // replace weil url nur bei http geht also https wird durch http getauscht
         // (aber besser wär wahrscheinlich glei datenbank ändern)
 
-        // weburl = weburl.replace("https","http");
+        weburl = weburl.replace("https","http");
 
         WebEngine webEngine = idWebview.getEngine();
-
-        System.out.println(weburl);  // zum testen des wertes es wird jz grad noch de sehhoehe ausgeben also
-        // bei Mallorca zb 13 - SONSt sollte es eigentlich gehen es muss halt a string sein
-        //webEngine.load(weburl);  // des is dann des richtige das dann alles geht, wenn a string drin is
-        webEngine.load("http://www.google.at");  // zum testen dann weglöschen
-
-
-
-
+        System.out.println(weburl);
+        webEngine.load(weburl);
 
     }
     // Funktionalität für den ZureckButton:
