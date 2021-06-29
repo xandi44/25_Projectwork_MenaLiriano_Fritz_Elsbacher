@@ -14,10 +14,12 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import sample.app.Main;
 import sample.bll.City;
 import sample.bll.Country;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -45,7 +47,6 @@ public class Controller implements Initializable {
         this.lvCountry.setItems(countryList);
 
         cities = City.getCities();
-        cities.forEach(c -> System.out.println(c.getName() + c.getCountry().getName()));
 
         this.lvCountry.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
@@ -77,35 +78,6 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private void OnClickWebside(ActionEvent actionEvent){
-        if(currentCity != null){
-            try {
-                FXMLLoader loader = null;
-                ControllerWebside controller = null;
-                BorderPane root = null;
-                loader = new FXMLLoader( getClass().getResource("sampleWebside.fxml"));
-
-                Stage stage = null;
-                Scene scene = null;
-                root = loader.load();
-                controller = loader.getController();
-                controller.setCity("https://www.google.com"); // es geht hardcodiert,
-                // aber es geht noch ned mit der code zeile, da irgend a fehler is statt an string steht de sehehhoehe drin
-                //controller.setCity(currentCity.getWebseite());
-                stage = new Stage();
-                scene = new Scene(root);
-                stage.setTitle("Projectwork");
-                stage.setScene(scene);
-                stage.initModality(Modality.APPLICATION_MODAL);
-                stage.showAndWait();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
-    }
-
-    @FXML
     private void OnClickPictures(ActionEvent actionEvent) {
         if(currentCity != null){
             try {
@@ -118,10 +90,15 @@ public class Controller implements Initializable {
                 Scene scene = null;
                 root = loader.load();
                 controller = loader.getController();
-               // controller.setCity(currentCity);
+                controller.setCity(currentCity);
+                controller.setCountry(currentCountry);
                 stage = new Stage();
                 scene = new Scene(root);
                 stage.setTitle("Projectwork");
+                InputStream iconStream = getClass().getResourceAsStream("/icon.jpg");
+                if(iconStream != null){
+                    stage.getIcons().add(new Image(iconStream));
+                }
                 stage.setScene(scene);
                 stage.initModality(Modality.APPLICATION_MODAL);
                 stage.showAndWait();

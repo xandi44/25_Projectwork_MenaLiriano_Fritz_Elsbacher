@@ -44,7 +44,6 @@
                      <contextMenu>
                         <ContextMenu>
                           <items>
-                            <MenuItem mnemonicParsing="false" onAction="#OnClickWebside" text="Webseite" />
                               <MenuItem mnemonicParsing="false" onAction="#OnClickPictures" text="Bilder" />
                           </items>
                         </ContextMenu>

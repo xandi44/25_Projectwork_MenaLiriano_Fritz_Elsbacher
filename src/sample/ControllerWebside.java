@@ -30,9 +30,9 @@ public class ControllerWebside {
 
 
 
-  // Funktionaltiät für den Webviewer:
+    // Funktionaltiät für den Webviewer:
     public void setCity(String currenturl) {
-        String weburl = currenturl;
+        String weburl = currenturl.replace(" ","");
         // replace weil url nur bei http geht also https wird durch http getauscht
         // (aber besser wär wahrscheinlich glei datenbank ändern)
 

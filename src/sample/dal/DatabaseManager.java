@@ -2,6 +2,7 @@ package sample.dal;
 
 
 
+import javafx.scene.image.Image;
 import sample.bll.City;
 import sample.bll.Country;
 import sample.bll.Picture;
@@ -24,7 +25,6 @@ public class DatabaseManager {
     private String password;
     private static DatabaseManager instance;
     private HashMap<Integer, Country> countries = null;
-    private HashMap<Integer, Picture> pictures = null;
     private HashMap<Integer, City> cities = null;
 
     private DatabaseManager(){
@@ -89,7 +89,7 @@ public class DatabaseManager {
             resultSet = stmt.executeQuery(query);
             // resultset wird durchiteriert
             while(resultSet.next()){
-                cities.put(resultSet.getInt(1),new City(resultSet.getInt(1),resultSet.getString(2),getCountries().get(resultSet.getInt(3)),resultSet.getInt(3),resultSet.getInt(4),resultSet.getInt(5),resultSet.getString(6)));
+                cities.put(resultSet.getInt(1),new City(resultSet.getInt(1),resultSet.getString(2),getCountries().get(resultSet.getInt(3)),resultSet.getInt(4),resultSet.getInt(5),resultSet.getInt(6),resultSet.getString(7)));
             }
         }catch(SQLException throwables){
             throwables.printStackTrace();
@@ -98,30 +98,29 @@ public class DatabaseManager {
         return cities;
     }
 
-    public List<Picture> getAllPictures() {
-        ArrayList<Picture> studentArrayList = new ArrayList<>();
+    public HashMap<Integer,Picture> getPictures(City city) {
+        HashMap<Integer,Picture> pictures = new HashMap<>();
 
-        Statement stmt;
         ResultSet resultSet;
+        PreparedStatement preparedStatement;
 
-        String query = "SELECT * FROM picture";
+        String query = "SELECT * FROM picture WHERE idCity = ?";
 
         try(Connection con = this.createConnection()){
-            //Statement wird erzeugt
-            stmt = con.createStatement();
-            resultSet = stmt.executeQuery(query);
-            // resultset wird durchiteriert
+            preparedStatement = con.prepareStatement(query);
+            preparedStatement.setInt(1,city.getId());
+            resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
 
-                InputStream in = resultSet.getBlob(2).getBinaryStream();
-                BufferedImage image = ImageIO.read(in);
-                studentArrayList.add(new Picture(resultSet.getInt(1),getAllCities().get(resultSet.getInt(2)),image));
+                InputStream in = resultSet.getBlob(3).getBinaryStream();
+                Image image =  new Image(in);
+                pictures.put(resultSet.getInt(1),new Picture(resultSet.getInt(1),getAllCities().get(resultSet.getInt(2)),image));
             }
-        }catch(SQLException | IOException throwables){
+        }catch(SQLException throwables) {
             throwables.printStackTrace();
         }
 
-        return studentArrayList;
+        return pictures;
     }
 
 
