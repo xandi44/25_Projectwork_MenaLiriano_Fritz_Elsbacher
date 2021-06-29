@@ -8,7 +8,6 @@ CREATE TABLE country(
     PRIMARY KEY (id)
 );
 
-
 CREATE TABLE city(
     id integer GENERATED ALWAYS AS IDENTITY ,
     name CHAR(200),
@@ -57,7 +56,7 @@ INSERT INTO city (name, idCountry,einwohner,flaeche,seehoehe,webseite) VALUES ('
 INSERT INTO country (name) VALUES ('Schweiz');
 INSERT INTO city (name, idCountry,einwohner,flaeche,seehoehe,webseite) VALUES ('Bern',5,133115,51.6,540,'https://www.bern.com/de/home');
 --INSERT INTO city (name, idCountry,einwohner,flaeche,seehoehe,webseite) VALUES ('St. Moritz',5,5233,28.69,1882,'https://www.stmoritz.com/de/');
-INSERT INTO city (name, idCountry,einwohner,flaeche,seehoehe,webseite) VALUES ('Zürich',5,402762,87.88,408,'https://www.zuerich.com/de');
+INSERT INTO city (name, idCountry,einwohner,flaeche,seehoehe,webseite) VALUES ('Zï¿½rich',5,402762,87.88,408,'https://www.zuerich.com/de');
 
 --Spanien
 INSERT INTO country (name) VALUES ('Spanien');
