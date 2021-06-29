@@ -10,7 +10,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerWebside">
    <top>
-      <Label fx:id="lbWebView" text="Webseite" textFill="#d726aa" BorderPane.alignment="CENTER">
+      <Label fx:id="lbWebView" text="Website" textFill="#d726aa" BorderPane.alignment="CENTER">
          <font>
             <Font name="Moonbeam Regular" size="38.0" />
          </font>
