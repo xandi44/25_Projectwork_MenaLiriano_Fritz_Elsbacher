@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.ImageView?>
@@ -12,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerCity">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerCity">
    <top>
       <Label fx:id="lbCityName" text="City" textFill="#bc1264" BorderPane.alignment="CENTER">
          <font>
@@ -36,15 +37,18 @@
          <children>
             <VBox prefHeight="268.0" prefWidth="600.0">
                <children>
-                  <Slider onDragDetected="#slPic">
+                  <Slider fx:id="slider" onMouseReleased="#slchanged">
                      <VBox.margin>
                         <Insets left="90.0" right="90.0" />
                      </VBox.margin>
                   </Slider>
-                  <ImageView fx:id="iwPic" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="iwPic" fitHeight="194.0" fitWidth="421.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
                         <Insets left="90.0" right="90.0" />
                      </VBox.margin>
+                     <viewport>
+                        <Rectangle2D />
+                     </viewport>
                   </ImageView>
                </children>
             </VBox>
@@ -111,4 +115,11 @@
          </children>
       </GridPane>
    </center>
+   <bottom>
+      <Button mnemonicParsing="false" onAction="#OnClickWebsite" text="Website" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
 </BorderPane>

@@ -1,10 +1,10 @@
 package sample.bll;
 
-import sample.dal.dao.Dao;
+import javafx.scene.image.Image;
+import sample.dal.DatabaseManager;
 
-import java.awt.*;
+
 import java.util.HashSet;
-import java.util.Set;
 
 public class Picture {
     int id;
@@ -41,7 +41,7 @@ public class Picture {
         this.image = image;
     }
 
-    public static Set<Picture> getPersons(Dao<Picture> dao){
-        return new HashSet<>(dao.getAll());
+    public static HashSet<Picture> getPictures(City city){
+        return new HashSet<>(DatabaseManager.getInstance().getPictures(city).values());
     }
 }
